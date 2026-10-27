@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MICAHEALING · The follow-up emails</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --grn:#447A21; --grn-d:#355F1A; --grn-t:#EEF3EB; --grn-l:#D7E4CE;
+  --ink:#161A14; --ink2:#5A6354; --ink3:#8B9484;
+  --bg:#F6F7F4; --card:#FFFFFF; --line:#DFE4DA; --line2:#EDF0EA;
+  --mark:#FFF6D9; --mark-b:#E8C96A;
+  --f:"Source Sans 3","Source Sans Pro",-apple-system,BlinkMacSystemFont,arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+.wrap{max-width:780px;margin:0 auto;padding:0 20px 80px}
+h1,h2,h3{text-wrap:balance}
+a{color:var(--grn-d)}
+
+/* masthead */
+.top{background:var(--grn);color:#fff;padding:34px 0 30px;margin-bottom:0}
+.top .wrap{padding-bottom:0}
+.eyebrow{font-size:12px;letter-spacing:.17em;text-transform:uppercase;opacity:.82;font-weight:600}
+h1{font-size:clamp(28px,6.4vw,40px);font-weight:700;letter-spacing:-.02em;line-height:1.1;margin:8px 0 10px}
+.top p{font-size:16.5px;opacity:.92;max-width:52ch}
+
+section{padding:34px 0;border-top:1px solid var(--line)}
+section:first-of-type{border-top:none}
+h2{font-size:22px;font-weight:700;letter-spacing:-.01em;margin-bottom:10px}
+h3{font-size:17px;font-weight:700;margin-bottom:6px}
+p{margin-bottom:13px;max-width:62ch}
+p:last-child{margin-bottom:0}
+.muted{color:var(--ink2);font-size:16px}
+ul.q{list-style:none;margin:8px 0 0}
+ul.q li{padding:9px 0 9px 22px;position:relative;color:var(--ink2);font-size:16px;line-height:1.55;
+  border-bottom:1px solid var(--line2)}
+ul.q li:last-child{border-bottom:none}
+ul.q li::before{content:'';position:absolute;left:0;top:18px;width:9px;height:2px;background:var(--grn)}
+ul.q li b{color:var(--ink)}
+
+/* sticky control bar */
+.ctrl{position:sticky;top:0;z-index:40;background:rgba(246,247,244,.96);
+  backdrop-filter:saturate(1.6) blur(8px);border-bottom:1px solid var(--line);
+  padding:12px 0 13px;margin-bottom:0}
+.ctrl .wrap{padding-bottom:0}
+.clabel{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink2);
+  font-weight:700;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font:inherit;font-size:15px;font-weight:600;cursor:pointer;background:var(--card);
+  color:var(--ink2);border:1.5px solid var(--line);padding:8px 14px;border-radius:999px;
+  line-height:1.2;transition:background .15s,border-color .15s,color .15s}
+.chip:hover{border-color:var(--grn);color:var(--grn-d)}
+.chip[aria-pressed="true"]{background:var(--grn);border-color:var(--grn);color:#fff}
+.chip:focus-visible{outline:2px solid var(--grn-d);outline-offset:2px}
+.modes{display:flex;gap:7px;margin-top:9px}
+.mode{font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;background:transparent;
+  color:var(--ink3);border:0;border-bottom:2px solid transparent;padding:3px 1px;margin-right:12px}
+.mode[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--grn)}
+.mode:focus-visible{outline:2px solid var(--grn-d);outline-offset:2px}
+
+/* email */
+.mail{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;
+  margin-top:14px;box-shadow:0 1px 2px rgba(30,40,25,.05)}
+.when{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;margin-top:30px}
+.when h3{font-size:19px}
+.when .tm{font-size:13.5px;color:var(--ink3);font-weight:600}
+.mh{background:var(--grn-t);border-bottom:1px solid var(--line);padding:13px 18px}
+.mh .r{display:flex;gap:10px;font-size:13.5px;line-height:1.5;margin-bottom:2px}
+.mh .r .k{color:var(--ink3);min-width:58px;flex:none;font-weight:600;font-size:11.5px;
+  letter-spacing:.1em;text-transform:uppercase;padding-top:3px}
+.mh .subj{font-size:17.5px;font-weight:700;min-width:0}
+.mh .pre{font-size:14.5px;color:var(--ink2);min-width:0}
+.mb{padding:20px 18px 24px;font-size:17px;line-height:1.62}
+.mb p{margin-bottom:15px;max-width:none}
+.mb p:last-child{margin-bottom:0}
+.sig{color:var(--ink2);font-size:16px;line-height:1.45}
+.btn{display:inline-block;background:var(--grn);color:#fff;font-size:15.5px;font-weight:700;
+  padding:12px 22px;border-radius:5px;margin:3px 8px 3px 0}
+.btn.alt{background:transparent;color:var(--grn-d);border:1.5px solid var(--grn);padding:10.5px 20px}
+.btnrow{margin-bottom:15px}
+.ln{color:var(--grn-d);text-decoration:underline;text-underline-offset:2px}
+
+/* the bits that change */
+.v{background:var(--mark);box-shadow:inset 0 -2px 0 var(--mark-b);border-radius:2px;
+  padding:1px 3px;transition:background .2s}
+body.nomark .v{background:transparent;box-shadow:none;padding:0}
+.markbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:16px;
+  font-size:14px;color:var(--ink2)}
+.swatch{display:inline-block;width:26px;height:13px;background:var(--mark);
+  box-shadow:inset 0 -2px 0 var(--mark-b);border-radius:2px;vertical-align:-2px;margin-right:2px}
+.toggle{font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;background:var(--card);
+  border:1.5px solid var(--line);color:var(--ink2);border-radius:999px;padding:4px 12px}
+.toggle:hover{border-color:var(--grn)}
+.toggle:focus-visible{outline:2px solid var(--grn-d);outline-offset:2px}
+
+/* compare view */
+.cmp{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px 20px 16px;margin-top:14px}
+.cmp h3{margin-bottom:3px}
+.cmp .sm{font-size:14.5px;color:var(--ink2);margin-bottom:14px}
+.cq{border-left:3px solid var(--grn-l);padding:2px 0 2px 15px;margin-bottom:17px}
+.cq:last-child{margin-bottom:0}
+.cq .who{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--grn-d);
+  font-weight:700;margin-bottom:4px}
+.cq p{font-size:16.5px;line-height:1.56;margin:0}
+.cq.on{border-left-color:var(--grn);background:var(--grn-t);border-radius:0 4px 4px 0;
+  padding-top:9px;padding-bottom:9px}
+
+/* subject picker */
+.subs{margin-top:10px}
+.sub{display:flex;gap:11px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);
+  border-radius:5px;padding:11px 13px;margin-bottom:7px;cursor:pointer;font-size:16.5px;min-width:0}
+.sub:hover{border-color:var(--grn-l)}
+.sub input{margin:5px 0 0;accent-color:var(--grn);flex:none;width:17px;height:17px}
+.sub .t{min-width:0}
+.sub .t b{font-weight:700}
+.sub .t em{display:block;font-style:normal;font-size:13.5px;color:var(--ink3);margin-top:1px}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+  color:#8A5510;background:#FBF1DD;border:1px solid #E0BE7C;border-radius:999px;
+  padding:1px 8px;margin-left:7px;white-space:nowrap;vertical-align:1px}
+
+/* notes */
+textarea{width:100%;font:inherit;font-size:16.5px;background:var(--card);color:var(--ink);
+  border:1.5px solid var(--line);border-radius:5px;padding:11px 12px;min-height:76px;
+  resize:vertical;margin-top:8px}
+textarea:focus-visible{outline:2px solid var(--grn);outline-offset:-1px;border-color:var(--grn)}
+.nlab{font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink2);font-weight:700;margin-top:16px}
+.send{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:18px}
+.bigbtn{font:inherit;font-size:16.5px;font-weight:700;cursor:pointer;background:var(--grn);color:#fff;
+  border:0;border-radius:5px;padding:13px 24px}
+.bigbtn:hover{background:var(--grn-d)}
+.bigbtn:focus-visible{outline:2px solid var(--grn-d);outline-offset:2px}
+.said{font-size:14.5px;color:var(--grn-d);font-weight:600}
+#out{width:100%;min-height:200px;margin-top:12px;font-size:15px}
+
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);
+  font-size:13.5px;color:var(--ink3)}
+@media(max-width:560px){
+  .mh .r{flex-direction:column;gap:1px}
+  .mh .r .k{padding-top:0}
+  .btn{display:block;text-align:center;margin-right:0}
+}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <div class="eyebrow">MICAHEALING &middot; IV quiz</div>
+    <h1>The follow-up emails</h1>
+    <p>Three emails that go out over ten days to anyone who finishes the What&rsquo;s Your Drip quiz.
+    Sent from you, and they stop the moment that person books.</p>
+  </div>
+</div>
+
+<div class="ctrl">
+  <div class="wrap">
+    <div class="clabel">Read them as someone who matched with</div>
+    <div class="chips" id="chips"></div>
+    <div class="modes">
+      <button class="mode" id="m-full" aria-pressed="true">All three emails</button>
+      <button class="mode" id="m-cmp" aria-pressed="false">Just the parts that change</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section id="intro">
+  <h2>Only two things change</h2>
+  <p>Every version of these emails is identical except for two pieces: one line in the first email
+  describing the drip, and one paragraph in the second answering whether it&rsquo;s worth the money.
+  Those two are <span class="v">highlighted</span> wherever they appear.</p>
+  <p class="muted">So once you&rsquo;ve read one version through, you&rsquo;re only really checking eight
+  short pieces of writing. The second tab above puts all eight side by side if that&rsquo;s easier.</p>
+  <div class="markbar">
+    <span><span class="swatch"></span> changes with each result</span>
+    <button class="toggle" id="t-mark" aria-pressed="true">Hide highlighting</button>
+  </div>
+</section>
+
+<!-- FULL VIEW -->
+<section id="view-full">
+  <h2>The three emails</h2>
+  <p class="muted" id="ctx">Shown as someone who matched with Crud Kicker would receive them.
+  <span id="alsoline"></span></p>
+
+  <div class="when"><h3>Email 1</h3><span class="tm">Sends right away</span></div>
+  <div class="mail">
+    <div class="mh">
+      <div class="r"><span class="k">From</span><span class="pre">Jess &middot; MICAHEALING</span></div>
+      <div class="r"><span class="k">Subject</span><span class="subj" id="s1">&nbsp;</span></div>
+      <div class="r"><span class="k">Preview</span><span class="pre">Plus $25 off your first one, because you&rsquo;re new.</span></div>
+    </div>
+    <div class="mb">
+      <p>Hi Sarah,</p>
+      <p>Quiz says <span data-drip></span>.</p>
+      <p><span class="v" data-one></span></p>
+      <p>Also, you&rsquo;re new here, so your first one is $25 off. Say something when you book and
+      we&rsquo;ll sort it.</p>
+      <div class="btnrow"><span class="btn">Book your <span data-drip></span></span></div>
+      <p>And listen, if the quiz missed, it happens. It&rsquo;s a quiz, not an MRI. We&rsquo;ve got
+      70-some recipes back there and a clinical team who actually know what they&rsquo;re doing.
+      Come in and we&rsquo;ll build you something better.</p>
+      <p>Not ready to book anything? Talk to me first. Free, about 15 minutes, no bag involved.
+      <span class="ln">Book a free consult</span></p>
+      <p class="sig">Jess<br>MICAHEALING<br>810-295-8427</p>
+    </div>
+  </div>
+
+  <div class="when"><h3>Email 2</h3><span class="tm">Three days later, only if they haven&rsquo;t booked</span></div>
+  <div class="mail">
+    <div class="mh">
+      <div class="r"><span class="k">From</span><span class="pre">Jess &middot; MICAHEALING</span></div>
+      <div class="r"><span class="k">Subject</span><span class="subj" id="s2">&nbsp;</span></div>
+      <div class="r"><span class="k">Preview</span><span class="pre">Straight answer, no sales pitch.</span></div>
+    </div>
+    <div class="mb">
+      <p>Hi Sarah,</p>
+      <p>Here&rsquo;s the question everybody has and nobody emails me about: is this actually worth it,
+      or am I paying for expensive pee?</p>
+      <p>Fair question. I&rsquo;d rather answer it than pretend nobody&rsquo;s asking.</p>
+      <p><span class="v" data-obj></span></p>
+      <p>The $25 is still sitting there if you want it.</p>
+      <div class="btnrow"><span class="btn">Book your <span data-drip></span></span></div>
+      <p class="sig">Jess</p>
+    </div>
+  </div>
+
+  <div class="when"><h3>Email 3</h3><span class="tm">Ten days later, only if they still haven&rsquo;t booked</span></div>
+  <div class="mail">
+    <div class="mh">
+      <div class="r"><span class="k">From</span><span class="pre">Jess &middot; MICAHEALING</span></div>
+      <div class="r"><span class="k">Subject</span><span class="subj" id="s3">&nbsp;</span></div>
+      <div class="r"><span class="k">Preview</span><span class="pre">No pressure, just leaving the door open.</span></div>
+    </div>
+    <div class="mb">
+      <p>Hi Sarah,</p>
+      <p>Last email from me about this, promise. I&rsquo;m not going to be the clinic that turns up in
+      your inbox every Tuesday forever.</p>
+      <p><span data-drip></span> is still your match. The $25 is still yours. We&rsquo;re still here.</p>
+      <p>And if the reason you haven&rsquo;t booked is that you&rsquo;re not sure an IV is even the right
+      call, just say that. Free consult, no bag involved, and I&rsquo;ll tell you straight if I think you
+      need something else.</p>
+      <p>That&rsquo;s it. That&rsquo;s the email.</p>
+      <div class="btnrow">
+        <span class="btn">Book your <span data-drip></span></span>
+        <span class="btn alt">Or book a free consult</span>
+      </div>
+      <p class="sig">Jess</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE VIEW -->
+<section id="view-cmp" hidden>
+  <h2>Everything that changes, in one place</h2>
+  <p class="muted">The version you have selected above is shaded. Everything else in all three emails
+  is word for word identical.</p>
+
+  <div class="cmp">
+    <h3>Email 1 &middot; the line describing the drip</h3>
+    <p class="sm">Sits right under &ldquo;Quiz says&hellip;&rdquo;</p>
+    <div id="cmp-one"></div>
+  </div>
+
+  <div class="cmp">
+    <h3>Email 2 &middot; the answer to &ldquo;is it worth it&rdquo;</h3>
+    <p class="sm">This is the one carrying a claim about what an IV does, so it&rsquo;s the one worth
+    the red pen.</p>
+    <div id="cmp-obj"></div>
+  </div>
+</section>
+
+<section id="subjects">
+  <h2>Subject lines</h2>
+  <p class="muted">Pick whichever you&rsquo;d rather use. The one selected shows in the emails above.</p>
+
+  <h3 style="margin-top:20px">Email 1</h3>
+  <div class="subs">
+    <label class="sub"><input type="radio" name="sub1" id="sub1a" checked>
+      <span class="t"><b>Quiz says: <span data-drip></span></b></span></label>
+    <label class="sub"><input type="radio" name="sub1" id="sub1b">
+      <span class="t"><b>Sarah, the quiz has spoken</b></span></label>
+    <label class="sub"><input type="radio" name="sub1" id="sub1c">
+      <span class="t"><b>Your drip, as promised</b></span></label>
+  </div>
+
+  <h3 style="margin-top:22px">Email 2</h3>
+  <div class="subs">
+    <label class="sub"><input type="radio" name="sub2" id="sub2a" checked>
+      <span class="t"><b>Is this just expensive pee?</b><span class="tag">your call</span>
+      <em>It will get opened, and it came off your own writing. It&rsquo;s also your name on it.</em></span></label>
+    <label class="sub"><input type="radio" name="sub2" id="sub2b">
+      <span class="t"><b>The question nobody emails me about</b><em>Same job, volume turned down.</em></span></label>
+    <label class="sub"><input type="radio" name="sub2" id="sub2c">
+      <span class="t"><b>Let&rsquo;s talk about whether this is worth it</b><em>The plainest of the three.</em></span></label>
+  </div>
+
+  <h3 style="margin-top:22px">Email 3</h3>
+  <div class="subs">
+    <label class="sub"><input type="radio" name="sub3" id="sub3a" checked>
+      <span class="t"><b>That&rsquo;s it, that&rsquo;s the email</b></span></label>
+    <label class="sub"><input type="radio" name="sub3" id="sub3b">
+      <span class="t"><b>Last one, promise</b></span></label>
+    <label class="sub"><input type="radio" name="sub3" id="sub3c">
+      <span class="t"><b>Still here, still $25 off</b></span></label>
+  </div>
+</section>
+
+<section id="notes">
+  <h2>Tell us what to change</h2>
+  <p class="muted">Type anywhere below, then hit the button at the bottom to copy it all out and send
+  it back. Nothing is set up yet, so changes right now cost nothing.</p>
+
+  <ul class="q">
+    <li><b>Does this sound like you?</b> Anything you&rsquo;d never say, say so and we rewrite it. This is the only question that really matters.</li>
+    <li><b>Are the &ldquo;worth it&rdquo; paragraphs accurate?</b> Timing, what each drip does, and the places where the email admits something is oversold. You&rsquo;re the clinician on this one.</li>
+    <li><b>The $25</b> is written as new clients only, no expiry, sorted at the desk. Right, or are there limits?</li>
+    <li><b>The free consult</b> appears in emails 1 and 3. Do you want to offer it, how long does it run, and who takes it?</li>
+    <li><b>Anything missing?</b> Something you always say to a first-time IV patient that isn&rsquo;t in here.</li>
+  </ul>
+
+  <div class="nlab">Email 1</div>
+  <textarea id="n1" placeholder="Anything about the first email"></textarea>
+  <div class="nlab">Email 2</div>
+  <textarea id="n2" placeholder="Anything about the second email, including the worth-it paragraphs"></textarea>
+  <div class="nlab">Email 3</div>
+  <textarea id="n3" placeholder="Anything about the third email"></textarea>
+  <div class="nlab">The offer, the consult, anything else</div>
+  <textarea id="n4" placeholder="The $25, the free consult, or anything else on your mind"></textarea>
+
+  <div class="send">
+    <button class="bigbtn" id="copy">Copy my notes</button>
+    <span class="said" id="said"></span>
+  </div>
+  <textarea id="out" hidden readonly></textarea>
+  <p class="muted" style="margin-top:12px">Then paste it into a text or an email to Brady. Your typing
+  is saved in this browser, so you can close the page and come back to it.</p>
+</section>
+
+<footer>
+  The Quill Company &middot; Griff@thequillcompany.com &middot; (248) 494-6836
+</footer>
+
+</div>
+
+<script>
+(function(){
+var GROUPS = [
+  { id:"crud", label:"Crud Kicker",
+    also:"Mr. Chow gets this same version.",
+    one:"For when something’s going around and you’d rather not find out what.",
+    obj:"Catch it early and these do the most work. Day one of “oh no,” not day four of “I’ve made a terrible mistake.” It’s hydration plus the vitamins your body burns through fastest when it’s fighting something, straight in, while it still makes a difference. Leave it a week and honestly, you’re mostly just paying for a nap in a comfy chair." },
+  { id:"esther", label:"Queen Esther",
+    also:"This version goes out on its own.",
+    one:"Biotin and glutathione, working on your skin and hair from the inside.",
+    obj:"This is not a facial and it will not behave like one. It works from the inside, which means it does better as something you come back for than as a one-off miracle. If you want to walk out glowing this afternoon, book a facial instead and I’ll tell you that to your face rather than take your money and let you find out." },
+  { id:"nad", label:"NAD+",
+    also:"Trim & Tonic gets this same version.",
+    one:"The serious end of the menu. More in the bag, more time in the chair.",
+    obj:"Yes, it’s the expensive one. I’m not going to pretend that’s nothing. What you’re paying for is more in the bag and longer in the chair, and the research behind it is genuinely more promising for some people than others. Which is exactly why I’d rather talk to you first than have you book it off a quiz and hope." },
+  { id:"sink", label:"Kitchen Sink",
+    also:"Plain Jane, Aunt Flo and Make Your Own Cocktail get this same version.",
+    one:"The flexible one. A solid starting point we can build on once we know you.",
+    obj:"This is the “I don’t really know what I need” option and there is no shame in it, most people start here. If your nutrition is hit or miss or you just feel a bit off, you do not need the most expensive bag on the menu to find that out. Start here, we’ll learn something, we’ll adjust." }
+];
+
+var SUBS = {
+  1:{ sub1a:function(d){return "Quiz says: "+d}, sub1b:function(){return "Sarah, the quiz has spoken"},
+      sub1c:function(){return "Your drip, as promised"} },
+  2:{ sub2a:function(){return "Is this just expensive pee?"},
+      sub2b:function(){return "The question nobody emails me about"},
+      sub2c:function(){return "Let’s talk about whether this is worth it"} },
+  3:{ sub3a:function(){return "That’s it, that’s the email"},
+      sub3b:function(){return "Last one, promise"},
+      sub3c:function(){return "Still here, still $25 off"} }
+};
+
+var cur = GROUPS[0];
+var NOTES = ["n1","n2","n3","n4"];
+
+function save(){
+  try{
+    var d = { g:cur.id, marks:!document.body.classList.contains("nomark") };
+    NOTES.forEach(function(k){ d[k]=document.getElementById(k).value; });
+    ["sub1","sub2","sub3"].forEach(function(n){
+      var c=document.querySelector('input[name="'+n+'"]:checked'); if(c) d[n]=c.id;
+    });
+    localStorage.setItem("mica-iv-review", JSON.stringify(d));
+  }catch(e){}
+}
+function load(){
+  try{
+    var d = JSON.parse(localStorage.getItem("mica-iv-review")||"{}");
+    if(d.g){ GROUPS.forEach(function(g){ if(g.id===d.g) cur=g; }); }
+    NOTES.forEach(function(k){ if(d[k]) document.getElementById(k).value=d[k]; });
+    ["sub1","sub2","sub3"].forEach(function(n){
+      if(d[n]){ var el=document.getElementById(d[n]); if(el) el.checked=true; }
+    });
+    if(d.marks===false) setMarks(false);
+  }catch(e){}
+}
+
+/* chips */
+var box=document.getElementById("chips");
+GROUPS.forEach(function(g){
+  var b=document.createElement("button");
+  b.type="button"; b.className="chip"; b.dataset.id=g.id; b.textContent=g.label;
+  b.addEventListener("click",function(){ cur=g; render(); save(); });
+  box.appendChild(b);
+});
+
+/* compare blocks */
+function buildCmp(key, host){
+  host.innerHTML="";
+  GROUPS.forEach(function(g){
+    var d=document.createElement("div");
+    d.className="cq"+(g.id===cur.id?" on":"");
+    d.dataset.id=g.id;
+    var w=document.createElement("div"); w.className="who"; w.textContent=g.label;
+    var p=document.createElement("p"); p.textContent=g[key];
+    d.appendChild(w); d.appendChild(p); host.appendChild(d);
+  });
+}
+
+function render(){
+  document.querySelectorAll(".chip").forEach(function(c){
+    c.setAttribute("aria-pressed", c.dataset.id===cur.id ? "true":"false");
+  });
+  document.querySelectorAll("[data-drip]").forEach(function(n){ n.textContent=cur.label; });
+  document.querySelectorAll("[data-one]").forEach(function(n){ n.textContent=cur.one; });
+  document.querySelectorAll("[data-obj]").forEach(function(n){ n.textContent=cur.obj; });
+  document.getElementById("alsoline").textContent=cur.also;
+  document.getElementById("ctx").firstChild.textContent =
+    "Shown as someone who matched with "+cur.label+" would receive them. ";
+  [1,2,3].forEach(function(i){
+    var map=SUBS[i], fn=null;
+    Object.keys(map).forEach(function(id){
+      var el=document.getElementById(id); if(el&&el.checked) fn=map[id];
+    });
+    if(!fn) fn=map[Object.keys(map)[0]];
+    document.getElementById("s"+i).textContent=fn(cur.label);
+  });
+  buildCmp("one", document.getElementById("cmp-one"));
+  buildCmp("obj", document.getElementById("cmp-obj"));
+}
+
+/* views */
+var mFull=document.getElementById("m-full"), mCmp=document.getElementById("m-cmp");
+function setView(full){
+  mFull.setAttribute("aria-pressed", full?"true":"false");
+  mCmp.setAttribute("aria-pressed", full?"false":"true");
+  document.getElementById("view-full").hidden=!full;
+  document.getElementById("view-cmp").hidden=full;
+}
+mFull.addEventListener("click",function(){ setView(true); });
+mCmp.addEventListener("click",function(){ setView(false); });
+
+/* highlighting */
+var tMark=document.getElementById("t-mark");
+function setMarks(on){
+  document.body.classList.toggle("nomark", !on);
+  tMark.setAttribute("aria-pressed", on?"true":"false");
+  tMark.textContent = on ? "Hide highlighting" : "Show highlighting";
+}
+tMark.addEventListener("click",function(){
+  setMarks(document.body.classList.contains("nomark")); save();
+});
+
+document.querySelectorAll('input[type="radio"]').forEach(function(r){
+  r.addEventListener("change",function(){ render(); save(); });
+});
+NOTES.forEach(function(k){
+  document.getElementById(k).addEventListener("input", save);
+});
+
+/* copy out */
+function picked(i){
+  var map=SUBS[i], out="";
+  Object.keys(map).forEach(function(id){
+    var el=document.getElementById(id); if(el&&el.checked) out=map[id](cur.label);
+  });
+  return out;
+}
+document.getElementById("copy").addEventListener("click",function(){
+  var L=[];
+  L.push("MICAHEALING IV quiz emails - Jess's notes");
+  L.push("");
+  L.push("SUBJECT LINES I WANT");
+  L.push("  Email 1: "+picked(1));
+  L.push("  Email 2: "+picked(2));
+  L.push("  Email 3: "+picked(3));
+  L.push("");
+  var labels=["Email 1","Email 2","Email 3","Offer, consult and anything else"];
+  NOTES.forEach(function(k,i){
+    var v=document.getElementById(k).value.trim();
+    L.push(labels[i].toUpperCase());
+    L.push(v || "  (nothing)");
+    L.push("");
+  });
+  var txt=L.join("\n");
+  var said=document.getElementById("said");
+  function fallback(){
+    var o=document.getElementById("out");
+    o.hidden=false; o.value=txt; o.focus(); o.select();
+    said.textContent="Copy the text below.";
+  }
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(function(){
+      said.textContent="Copied. Paste it into a text or email.";
+      setTimeout(function(){ said.textContent=""; },4000);
+    }).catch(fallback);
+  } else { fallback(); }
+});
+
+load();
+render();
+setView(true);
+})();
+</script>
+</body>
+</html>
